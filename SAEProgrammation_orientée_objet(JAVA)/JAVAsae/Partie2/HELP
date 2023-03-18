@@ -1,0 +1,12 @@
+1ère partie:
+
+1) Les méthodes getoperande1 et getoperande2 sont de type int car nous pensions que le ": nombre " signifiait qu'il prenait comme variable un nombre mais pas qu'il s'agissait du type meme de la methode. Nous avons donc fait des méthodes getoperande1 et getoperande2 de type int dont nous avons remarqué l'erreur plus tard. 
+
+
+
+2ème partie de la SAE.
+
+1) Il est indiqué dans votre UML que la méthode Valeur de la classe Expression a pour type double. Or, si cette méthode prend le type double, notre classe Calculatrice ne s compile pas car dans la classe Nombre est un int et que les autres classes sont implicitement liés à Nombre. Nous avons donc un conflit entre int et double. 
+Un double étant un int plus précis, nous avons décidé de changer le type de cette méthode en int.
+
+2) Dans votre UML également, le constructeur de la classe Nombre prend comme type un Nombre, alors qu'il s'agit d'un int de base. Nous avons donc pensé que vous vous étiez trompé sur l'UML à moins que vous attendiez un constructeur par copie, ce que je ne pense pas. Nous nous sommes donc permis de modifier le type de constructeur de Nombre à int.
