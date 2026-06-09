@@ -1,0 +1,306 @@
+---
+title: "Projet Wines"
+author: "CYPRIEN Chrislin, SOUPRAMANIANE Cyril, BRIZOT Guillaume"
+format: html
+editor: visual
+---
+
+## Import et Traitement du jeu de donnée
+
+#### Import
+
+```{r}
+getwd()
+vinblanc <- read.csv("winequality-white.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
+vinrouge <- read.csv("winequality-red.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
+
+# Ajouter la colonne type
+vinblanc$type <- "White"
+vinrouge$type <- "Red"
+
+# Combiner les donnees
+data <- rbind(vinblanc, vinrouge)
+```
+
+#### Traitement
+
+```{r}
+# Structure générale du jeu de donnée
+str(data)
+dim(data)
+summary(data)
+head(data, 10)
+tail(data, 10)
+View(data)
+
+# Vérification des valeurs manquantes
+sum(is.na(data))
+colSums(is.na(data))
+
+# Vérification des doublons
+sum(duplicated(data))
+```
+
+#### Matrice de corrélation
+
+```{r}
+wine_data_numeric <- wine_data[sapply(wine_data, is.numeric)]
+
+correlation_matrix <- cor(wine_data_numeric, use = "complete.obs")
+print(correlation_matrix)
+
+library(corrplot)
+
+corrplot(correlation_matrix, method = "circle")
+```
+
+```{r}
+# Sélection des variables quantitatives
+quantitative_vars <- wine_data[, c("quality", "alcohol", "density", "pH", "sulphates", "residual.sugar")]
+
+# Matrice de corrélation
+cor_matrix <- cor(quantitative_vars, use = "complete.obs")
+
+# Visualisation avec corrplot
+library(corrplot)
+corrplot(cor_matrix, method = "color", type = "lower", tl.col = "black", addCoef.col = "black")
+```
+
+#### Nettoyage
+
+```{r}
+# Suppression des doublons
+data <- data[!duplicated(data), ]
+
+# Suppression des lignes avec des valeurs NA
+data <- na.omit(data)
+
+# Vérification après nettoyage
+dim(data)
+```
+
+#### Catégorisation
+
+```{r}
+# Création des groupes pour la qualité
+data$quality_group <- cut(
+  data$quality,
+  breaks = c(0,4,5,6,7,10),
+  labels = c("Mauvais", "Moyen", "Bon", "Très bon", "Excellent"),
+  include.lowest = TRUE
+)
+# Y a peu d'excellent et de mauvais
+# Y en a pas mal de moyen et de bon
+# Quelques très bon*
+# Voilà pourquoi on a choisit cette répartition
+
+# Vérification des résultats
+table(data$quality_group)  
+head(data[, c("quality", "quality_group")]) 
+# View(data)
+```
+
+#### Affichage de la base
+
+```{r}
+library(arsenal)
+summary(tableby(quality_group ~ .,data=data))
+```
+
+## Analyse des données
+
+#### Nuages de points & Boxplot
+
+```{r}
+library(ggplot2)
+ for (var in names(data)[!names(data) %in% c("quality", "type", "quality_group")]) {
+   print(
+     ggplot(data, aes_string(x = var, y = "quality", color = "quality_group")) +
+       geom_point(alpha = 0.6) +
+       geom_smooth(method = "lm", se = FALSE) +
+       labs(title = paste("Relation entre qualité et", var),
+            x = var, y = "quality_group") +
+       theme_minimal()
+   )
+  
+   print(
+     ggplot(data, aes_string(x = "quality_group", y = var, fill = "quality_group")) +
+       geom_boxplot(alpha = 0.7) +
+       labs(title = paste("Comparaison de", var, "par qualité de vin"),
+            x = "Qualité de vin", y = var) +
+       theme_minimal()
+   )
+ }
+```
+
+#### Analyse Composantes Principales (ACP)
+
+```{r}
+library(FactoMineR)
+library(factoextra)
+
+ res.pca <- PCA(data,ncp = 6, quali.sup = c(13, 14))
+ fviz_eig(res.pca, addlabels = TRUE)
+
+ fviz_contrib(res.pca, choice = "var", axes = 1, top = 10)
+ fviz_contrib(res.pca, choice = "var", axes = 2, top = 10)
+ fviz_contrib(res.pca, choice = "var", axes = 3, top = 10)
+
+ fviz_pca_biplot(res.pca,repel = TRUE)
+ fviz_pca_ind(res.pca,repel = TRUE)
+ fviz_pca_var(res.pca,repel = TRUE)
+
+ summary(res.pca)
+
+
+ fviz_pca_ind(res.pca,
+              habillage = 13,
+              palette = c("#00AFBB", "#E7B800"),
+              repel = TRUE
+ )
+```
+
+## Clustering
+
+```{r}
+
+library(ggplot2)
+library(dplyr)
+library(NbClust)
+
+
+# Préparation des données
+
+ data_num <- data[, c("alcohol", "density", "residual.sugar", "pH", "sulphates", "volatile.acidity", "fixed.acidity", "citric.acid", "chlorides", "free.sulfur.dioxide", "total.sulfur.dioxide")]
+
+
+set.seed(123)
+NbClustObject <- NbClust(data_num, min.nc = 2, max.nc = 5, method = "kmeans")
+
+
+clusters <- kmeans(data_num, centers = 3)
+data$cluster <- as.factor(clusters$cluster)
+
+# Visualisation
+ ggplot(data, aes(x = alcohol, y = density, color = cluster)) +
+   geom_point(alpha = 0.6, size = 3) +
+   labs(title = "Clustering des vins", x = "Alcool (%)", y = "Densité", color = "Cluster") +
+   theme_minimal()
+```
+
+#### Régression logistique ordinal
+
+```{r}
+
+
+library(FactoMineR)
+detach("package:FactoMineR", unload = TRUE)
+library(MASS)
+library(gtsummary)
+
+# Modèle de régression logistique ordinale
+ ordinal_model <- polr(
+   as.factor(quality) ~ alcohol + density + residual.sugar + pH + 
+   sulphates + volatile.acidity + fixed.acidity + citric.acid + 
+   chlorides + free.sulfur.dioxide + total.sulfur.dioxide, 
+   data = data, 
+   method = "logistic"
+ )
+
+# Affichage du modèle
+summary(ordinal_model)
+tbl_regression(ordinal_model,exponentiate = TRUE)
+```
+
+## Méthodes de classification
+
+#### Répartition des données
+
+```{r}
+set.seed(78)
+library(caret)
+
+# Séparation en train (70%) et test (30%)
+train_index <- createDataPartition(data$quality_group, p = 0.7, list = FALSE)
+train_data <- data[train_index, ]
+test_data <- data[-train_index, ]
+```
+
+#### K-nearest Neighbors (KNN)
+
+```{r}
+library(class)
+
+# Sélection des colonnes numériques
+train_X <- train_data[, sapply(train_data, is.numeric)]
+train_y <- train_data$quality_group
+test_X <- test_data[, sapply(test_data, is.numeric)]
+test_y <- test_data$quality_group
+
+# Appliquer le modèle KNN
+knn_model <- knn(train = train_X, test = test_X, cl = train_y, k = 5)
+
+# Évaluation
+confusionMatrix(knn_model, test_y)
+```
+
+```         
+Excellent
+Sensitivity                0.085714       0.4952     0.6135         0.30469         0.066667
+Specificity                0.991459       0.7601     0.5045         0.92365         0.998061
+Pos Pred Value             0.315789       0.5039     0.4902         0.43333         0.500000
+Neg Pred Value             0.959313       0.7537     0.6269         0.87394         0.973518
+Prevalence                 0.043970       0.3298     0.4372         0.16080         0.028266
+Detection Rate             0.003769       0.1633     0.2682         0.04899         0.001884
+Detection Prevalence       0.011935       0.3241     0.5471         0.11307         0.003769
+Balanced Accuracy          0.538586       0.6277     0.5590         0.61417         0.532364
+```
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAABH0lEQVR4XmNgGAVDCqxdvzVhzcbNm6mBK6uqVqObDwf///9nXLt+SzG6JlJxTW3tVpBZ6OajgP3797Os3bClFV0zsbiuoXEfyAx0c7GCRTt3cq9Zv7UX3RBCuL6x8TBIL7p5eMGqVbv512zYMgvdMFy4san1FEgPujlEgbVrd0gCg3EJuqHouLm59TxILbp+ksCqjdvV12zcshLdcBhuamm7BFKDro8ssGbjRr01G7aux7Ckte0qSA5dPUVg9frNDkDLNsGDq7X9GkgMXR1VwNoNm0MgPmm/DmKjy49wwLjIbzM1MLq5GIBxgc9mhm2eFGGwGYQA42wvDI2kYrAZhADjdEyNpGKwGYQA42Q3DI2kYrAZBEGfy2aq4FEw5AAASl8F3R9fQqAAAAAASUVORK5CYII= "Run All Chunks Above")![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAaCAYAAADFTB7LAAAAcElEQVR4Xu3OwQmAQAxE0bClWYCW5N06tM6V2YPg5CjoF/JhLoHAi6iqn9eOefUbqrYvHY0cQDLyAlKRNyARmYA0ZMLRkAlGQyaU72tkAtlim7r/vJqDUDjlKBROOQyFU2icQuMUGqfQuBEaV1XPOwEx96nYACK8+wAAAABJRU5ErkJggg== "Run Current Chunk")
+
+#### RandomForest
+
+```{r}
+library(randomForest)
+library(caret)
+
+rf_model_2trees <- randomForest(x = train_X, y = train_y, ntree=2)
+rf_model_500trees <- randomForest(x = train_X, y = train_y, ntree=500)
+rf_model_1000trees <- randomForest(x = train_X, y = train_y, ntree=1000)
+
+rf_predictions_2 <- predict(rf_model_2trees, test_X)
+rf_predictions_500 <- predict(rf_model_500trees, test_X)
+rf_predictions_1000 <- predict(rf_model_1000trees, test_X)
+confusionMatrix(rf_predictions_2, test_y)
+confusionMatrix(rf_predictions_500, test_y)
+confusionMatrix(rf_predictions_1000, test_y)
+```
+
+En regardant les résultats on observe qu'avec un nombre très limité d'arbres, les prédictions sont assez dispersée et ne correspondent que très peu à la valeur attendue.
+
+En gardant le nombre d'arbres par défaut (500), On a déjà un modèle beaucoup plus performant avec une Accuracy de 99.9%.
+
+Nous avons tester avec 1000 arbres et nous avons obtenu 100% d'Accuracy.
+
+#### Scoring
+
+```{r}
+
+control <- trainControl(method = "cv", number = 10)
+model <- train(x=test_X, y=test_y, method="rf", trControl = control)
+model
+```
+
+Pour tenter d'avoir le meilleur paramètrage possible nous nous sommes dis qu'il était peut être bien de mettre en place une méthode de cross-validation pour trouver le bon nombre d'arbre à utiliser pour notre modèle de RandomForest.
+
+Le résultat étant 7, nous allons voir si cela marche bien.
+
+```{r}
+rf_model_CVtrees <- randomForest(x = train_X, y = train_y, ntree=7)
+rf_predictions_CV <- predict(rf_model_CVtrees, test_X)
+confusionMatrix(rf_predictions_CV, test_y)
+```
+
+Comme on peut le voir, l'Accuracy de 100% que nous avait donné la cross-validation ne s'avère pas réelle.
+
+Cela résulte probablement d'une mauvaise compréhension de la fonction de caret.trainControl() de notre part.

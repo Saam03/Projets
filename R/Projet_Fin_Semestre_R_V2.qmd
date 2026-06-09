@@ -1,0 +1,283 @@
+---
+title: "Projet DATA"
+author: "CYPRIEN Chrislin, SOUPRAMANIANE Cyril, BRIZOT Guillaume"
+format: html
+editor: visual
+---
+
+# 1) Comprehension des donnees
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+### Identification des variables disponibles
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+getwd()
+```
+
+```{r}
+
+vinblanc <- read.csv("winequality-white.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
+vinrouge <- read.csv("winequality-red.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
+```
+
+```{r}
+# Ajouter la colonne type
+vinblanc$type <- "White"
+vinrouge$type <- "Red"
+
+# Combiner les donnees
+wine_data <- rbind(vinblanc, vinrouge)
+```
+
+### Structure des jeux de donnees
+
+```{r}
+dim(wine_data)
+str(wine_data)
+```
+
+```{r}
+View(wine_data)
+```
+
+### Verification de la qualite des donnees
+
+```{r}
+sum(is.na(wine_data))
+```
+
+## Definition de la problematique et des techniques utilisees
+
+#### **Problematique**
+
+La problematique de notre analyse est la suivante :
+
+\
+**Quelles sont les differences significatives dans les caracteristiques du vin rouge et du vin blanc, et comment ces differences peuvent-elles etre exploitees pour (ameliorer) predire la qualite du vin ?**
+
+Cette question vise a? mieux comprendre les facteurs influena?ant la qualite du vin en fonction de ses caracteristiques chimiques (comme le pH, l'acide citrique, la teneur en alcool, etc.). Une telle comprehension pourrait non seulement guider les producteurs dans l'optimisation des processus de production, mais aussi ameliorer les methodes d'evaluation de la qualite.
+
+### 
+
+#### **Techniques utilisees**
+
+Pour repondre a? cette problematique, trois approches analytiques principales seront employees :
+
+1.  **Regression (lineaire ou de Poisson)**
+
+    La regression sera utilisee pour modeliser la relation entre les differentes caracteristiques du vin et sa qualite.
+
+    -   **Pourquoi la regression lineaire est-elle mieux adaptee ?**\
+        La qualite du vin est generalement une variable numerique continue. Une regression lineaire est donc pertinente, car elle nous permettra de predire une variable continue en fonction de variables explicatives.\
+        En revanche, une regression de Poisson serait moins adaptee ici, car elle est destinee a? modeliser des variables dependantes representant des **comptages** (comme le nombre d occurrences d un evenement).
+
+        Par consequent, une **regression lineaire** sera privilegiee pour identifier les caracteristiques ayant le plus d'impact sur la qualite.
+
+2.  **Analyse en Composantes Principales (ACP)**
+
+    -   L ACP permettra de reduire la dimensionnalite des donnees tout en conservant l essentiel de l information. Cette technique aide a? visualiser les differences entre le vin rouge et le vin blanc en projetant les donnees dans un espace a? faible dimension comme un graphique 2D. Elle permettra de mettre en evidence les combinaisons lineaires des caracteristiques les plus distinctes entre les deux types de vin.
+
+3.  **Clustering**
+
+    -   Le clustering sera utilise pour regrouper les observations (vins) ayant des caracteristiques similaires. En particulier, nous examinerons si les clusters formes correspondent aux categories "vin rouge" et "vin blanc". Cette technique pourrait egalement reveler des sous-groupes specifiques au sein des categories, fournissant ainsi des informations complementaires sur les differences.
+
+### Exploration initiale
+
+```{r}
+summary(wine_data)
+```
+
+#### Matrice de correlation
+
+```{r}
+
+wine_data_numeric <- wine_data[sapply(wine_data, is.numeric)]
+
+correlation_matrix <- cor(wine_data_numeric, use = "complete.obs")
+print(correlation_matrix)
+
+install.packages("corrplot")
+library(corrplot)
+
+corrplot(correlation_matrix,method = "number", type="upper", tl.col="black", tl.srt=45)
+corrplot(correlation_matrix, method = "circle")
+```
+
+#### Histogramme pour visualiser les variables
+
+```{r}
+hist(wine_data$alcohol,
+     main = "Distribution de l'Alcool", 
+     xlab = "Teneur en Alcool", 
+     col = "lightblue", 
+     border = "black")
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+# Histogramme de l'acidite volatile par type
+# Calculer la qualite moyenne pour chaque niveau d'alcool et type de vin
+aggregated_data <- wine_data %>%
+  group_by(alcohol, type) %>%
+  summarise(quality = median(quality, na.rm = TRUE))
+
+# Tracer le graphique
+ggplot(wine_data, aes(x = alcohol, y = quality, fill = type)) +
+  geom_col(position = "dodge", alpha = 0.8) +  # Barres juxtaposees avec transparence
+  scale_fill_manual(values = c("red", "#0072B2")) +  # Couleurs contrastees
+  labs(
+    title = "Relation entre l'Alcool et la Qualite par Type de Vin",
+    x = "Alcool (%)",
+    y = "Qualite moyenne",
+    fill = "Type de vin"
+  ) +
+  theme_minimal()
+
+```
+
+#### Nuage de points
+
+On a utilise le nuage de points, afin de voir la relation entre deux variables numeriques.
+
+```{r}
+library(ggplot2)
+
+# Nuage de points : Alcool en X, Qualite en Y, Fill par Type de vin
+ggplot(wine_data, aes(x = volatile.acidity, y = quality, color = type)) +
+  geom_point(size = 3, alpha = 0.8) +  # Points plus grands et lega?rement transparents
+  scale_color_manual(values = c("red",  "grey")) +  # Couleurs contrastees
+  labs(
+    title = "Differences entre les Vins Rouges et Blancs",
+    x = "Acidite volatile",
+    y = "Qualite",
+    color = "Type de vin"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "top",  # Deplace la legende en haut
+    plot.title = element_text(hjust = 0.5, face = "bold")  # Centrer le titre
+  )
+
+```
+
+## Regression lineaire
+
+```{r}
+lm_model <- lm(quality ~ ., data = wine_data)
+
+# Resume du moda?le
+summary(lm_model)
+```
+
+### Analyse Bivariée
+
+```{r}
+for (var in names(wine_data)[!names(wine_data) %in% c("quality", "type")]) {
+  print(
+    ggplot(wine_data, aes_string(x = "type", y = var, fill = "type")) +
+      geom_violin(alpha = 0.6) +
+      labs(title = paste("Violin plot de", var, "par type de vin"),
+           x = "Type de vin", y = var) +
+      theme_minimal()
+  )
+}
+```
+
+```{r}
+library(GGally)
+
+# Pairs plot avec diff?renciation par type
+ggpairs(wine_data, columns = which(sapply(wine_data, is.numeric)),
+        aes(color = type, alpha = 0.6))
+```
+
+```{r}
+for (var in names(wine_data)[!names(wine_data) %in% c("quality", "type")]) {
+  print(
+    ggplot(wine_data, aes_string(x = var, y = "quality", color = "type")) +
+      geom_point(alpha = 0.6) +
+      geom_smooth(method = "lm", se = FALSE) +
+      labs(title = paste("Relation entre quality et", var),
+           x = var, y = "Quality") +
+      theme_minimal()
+  )
+  
+  print(
+    ggplot(wine_data, aes_string(x = "type", y = var, fill = "type")) +
+      geom_boxplot(alpha = 0.7) +
+      labs(title = paste("Comparaison de", var, "par type de vin"),
+           x = "Type de vin", y = var) +
+      theme_minimal()
+  )
+}
+```
+
+-   **Fixed acidity** : Pour les deux types de vin, l'acidité fixe semble avoir peu d'impact sur la qualité. Cependant, une légère tendance positive est observée pour le vin rouge, alors qu'une faible tendance négative est visible pour le vin blanc.
+
+-   **Volatile acidity** : Une forte corrélation négative est visible pour les deux types de vin, surtout pour le vin rouge. Cela suggère que plus l'acidité volatile augmente, plus la qualité diminue.
+
+-   **Citric acid** : Pour les vins rouges, une corrélation légèrement positive est visible entre l'acide citrique et la qualité, tandis que pour les vins blancs, la relation est quasi neutre.
+
+-   **Residual sugar** : On peut observer un résidu de sucre plus faible dans les vins rouges avec une très légère tendance positive par rapport à la qualité. Cependant plus le taux de résidu de sucre est élevé pour les vins blancs, plus la qualit? diminue.
+
+-   **Chlorides** : Une forte corrélation négative est visible pour les deux types de vin, surtout pour le vin blanc. Cela amène à penser que plus le taux de Chlorides est élevé plus la qualité laisse à désirer.
+
+-   **Free Sulfur Dioxide** : Pour le vin blanc, la teneur en dioxyde de soufre libre n'influe quasiment pas sur la qualité du vin, contrairement au vin rouge qui lui perd en qualité.
+
+-   **Total Sulfur Dioxide** : Pour les deux vins, la qualité baisse plus la quantité en dioxide de soufre est élevé.
+
+-   **Density** : On observe que plus la densité d'un vin est élevé plus la qualité d'un vin va être basse, il y a donc une grand corrélation entre les deux.
+
+-   **pH** : Pour le vin rouge, il y a une très légère corrélation négative, tandis que pour les vins blancs, la relation est légère positive.
+
+-   **Sulphates** : Pour un bon vin rouge il faut une teneur en sulphates élevé alors que cela n'a que peut d'importance pour un vin blanc.
+
+-   **Alcohol** : Une forte corrélation positive est visible pour les deux types de vin surtout pour le vin rouge. On peut donc penser que moins il y a d'alcool, moins le vin est bon, tout en restant dans les % d'alcool des vins.
+
+    ## ACP
+
+```{r}
+library(FactoMineR)
+library(factoextra)
+```
+
+```{r}
+res.pca <- PCA(wine_data,ncp = 6, quanti.sup = 11:12, quali.sup = 13)
+
+fviz_eig(res.pca, addlabels = TRUE)
+```
+
+```{r}
+model <- lm(quality ~ density + alcohol , data = wine_data)
+
+# Resume du moda?le
+summary(model)
+```
+
+```{r}
+
+fviz_contrib(res.pca, choice = "var", axes = 1, top = 10)
+fviz_contrib(res.pca, choice = "var", axes = 2, top = 10)
+fviz_contrib(res.pca, choice = "var", axes = 3, top = 10)
+```
+
+```{r}
+fviz_pca_ind(res.pca,repel = TRUE)
+```
+
+```{r}
+summary(res.pca)
+```
+
+```{r}
+fviz_pca_ind(res.pca,
+             habillage = 13,  # Colonne qui contient le type de vin
+             palette = c("red", "blue"),  # Couleurs pour différencier les 
+             repel = TRUE    # Éviter le chevauchement des labels
+)
+
+```
