@@ -1,0 +1,1604 @@
+[
+  {
+    "name": "Afghanistan",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 2,
+      "total": 2
+    }
+  },
+  {
+    "name": "Albania",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 2,
+      "total": 2
+    }
+  },
+  {
+    "name": "Algeria",
+    "medals": {
+      "gold": 7,
+      "silver": 4,
+      "bronze": 9,
+      "total": 20
+    }
+  },
+  {
+    "name": "Argentina",
+    "medals": {
+      "gold": 22,
+      "silver": 27,
+      "bronze": 31,
+      "total": 80
+    }
+  },
+  {
+    "name": "Armenia",
+    "medals": {
+      "gold": 2,
+      "silver": 11,
+      "bronze": 9,
+      "total": 22
+    }
+  },
+  {
+    "name": "Australia",
+    "medals": {
+      "gold": 188,
+      "silver": 196,
+      "bronze": 234,
+      "total": 618
+    }
+  },
+  {
+    "name": "Australia / New Zealand (Australasia)",
+    "medals": {
+      "gold": 3,
+      "silver": 4,
+      "bronze": 5,
+      "total": 12
+    }
+  },
+  {
+    "name": "Austria",
+    "medals": {
+      "gold": 96,
+      "silver": 126,
+      "bronze": 138,
+      "total": 360
+    }
+  },
+  {
+    "name": "Austria / United States of Amerika",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Azerbaijan",
+    "medals": {
+      "gold": 9,
+      "silver": 17,
+      "bronze": 31,
+      "total": 57
+    }
+  },
+  {
+    "name": "Bahamas",
+    "medals": {
+      "gold": 8,
+      "silver": 2,
+      "bronze": 6,
+      "total": 16
+    }
+  },
+  {
+    "name": "Bahrain",
+    "medals": {
+      "gold": 4,
+      "silver": 3,
+      "bronze": 1,
+      "total": 8
+    }
+  },
+  {
+    "name": "Barbados",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Belarus",
+    "medals": {
+      "gold": 21,
+      "silver": 37,
+      "bronze": 47,
+      "total": 105
+    }
+  },
+  {
+    "name": "Belgium",
+    "medals": {
+      "gold": 50,
+      "silver": 59,
+      "bronze": 71,
+      "total": 180
+    }
+  },
+  {
+    "name": "Bermuda",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 1,
+      "total": 2
+    }
+  },
+  {
+    "name": "Bohemia",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 5,
+      "total": 6
+    }
+  },
+  {
+    "name": "Bohemia / Great Britain",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Botswana",
+    "medals": {
+      "gold": 1,
+      "silver": 2,
+      "bronze": 1,
+      "total": 4
+    }
+  },
+  {
+    "name": "Brazil",
+    "medals": {
+      "gold": 40,
+      "silver": 49,
+      "bronze": 80,
+      "total": 169
+    }
+  },
+  {
+    "name": "Bulgaria",
+    "medals": {
+      "gold": 58,
+      "silver": 91,
+      "bronze": 88,
+      "total": 237
+    }
+  },
+  {
+    "name": "Burkina-Faso",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Burundi",
+    "medals": {
+      "gold": 1,
+      "silver": 1,
+      "bronze": 0,
+      "total": 2
+    }
+  },
+  {
+    "name": "Cameroon",
+    "medals": {
+      "gold": 3,
+      "silver": 1,
+      "bronze": 2,
+      "total": 6
+    }
+  },
+  {
+    "name": "Canada",
+    "medals": {
+      "gold": 158,
+      "silver": 190,
+      "bronze": 232,
+      "total": 580
+    }
+  },
+  {
+    "name": "Cape Verde",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Chile",
+    "medals": {
+      "gold": 3,
+      "silver": 8,
+      "bronze": 4,
+      "total": 15
+    }
+  },
+  {
+    "name": "China",
+    "medals": {
+      "gold": 325,
+      "silver": 258,
+      "bronze": 221,
+      "total": 804
+    }
+  },
+  {
+    "name": "Chinese Taipei",
+    "medals": {
+      "gold": 9,
+      "silver": 11,
+      "bronze": 23,
+      "total": 43
+    }
+  },
+  {
+    "name": "Columbia",
+    "medals": {
+      "gold": 5,
+      "silver": 16,
+      "bronze": 16,
+      "total": 37
+    }
+  },
+  {
+    "name": "Commonwealth of Independent States",
+    "medals": {
+      "gold": 54,
+      "silver": 44,
+      "bronze": 37,
+      "total": 135
+    }
+  },
+  {
+    "name": "Costa Rica",
+    "medals": {
+      "gold": 1,
+      "silver": 1,
+      "bronze": 2,
+      "total": 4
+    }
+  },
+  {
+    "name": "Cote d´Ivoire",
+    "medals": {
+      "gold": 1,
+      "silver": 1,
+      "bronze": 3,
+      "total": 5
+    }
+  },
+  {
+    "name": "Croatia",
+    "medals": {
+      "gold": 20,
+      "silver": 21,
+      "bronze": 18,
+      "total": 59
+    }
+  },
+  {
+    "name": "Cuba",
+    "medals": {
+      "gold": 86,
+      "silver": 70,
+      "bronze": 86,
+      "total": 242
+    }
+  },
+  {
+    "name": "Cyprus",
+    "medals": {
+      "gold": 0,
+      "silver": 2,
+      "bronze": 0,
+      "total": 2
+    }
+  },
+  {
+    "name": "Czech Republic",
+    "medals": {
+      "gold": 32,
+      "silver": 33,
+      "bronze": 41,
+      "total": 106
+    }
+  },
+  {
+    "name": "Czechoslovakia",
+    "medals": {
+      "gold": 51,
+      "silver": 57,
+      "bronze": 60,
+      "total": 168
+    }
+  },
+  {
+    "name": "Denmark",
+    "medals": {
+      "gold": 53,
+      "silver": 83,
+      "bronze": 85,
+      "total": 221
+    }
+  },
+  {
+    "name": "Djibouti",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Dominican",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Dominican Republic",
+    "medals": {
+      "gold": 4,
+      "silver": 5,
+      "bronze": 6,
+      "total": 15
+    }
+  },
+  {
+    "name": "Ecuador",
+    "medals": {
+      "gold": 4,
+      "silver": 4,
+      "bronze": 2,
+      "total": 10
+    }
+  },
+  {
+    "name": "Egypt",
+    "medals": {
+      "gold": 9,
+      "silver": 12,
+      "bronze": 20,
+      "total": 41
+    }
+  },
+  {
+    "name": "Eritrea",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Estonia",
+    "medals": {
+      "gold": 14,
+      "silver": 11,
+      "bronze": 20,
+      "total": 45
+    }
+  },
+  {
+    "name": "Ethiopia",
+    "medals": {
+      "gold": 24,
+      "silver": 15,
+      "bronze": 23,
+      "total": 62
+    }
+  },
+  {
+    "name": "Federal Republic of Germany",
+    "medals": {
+      "gold": 67,
+      "silver": 82,
+      "bronze": 94,
+      "total": 243
+    }
+  },
+  {
+    "name": "Fiji",
+    "medals": {
+      "gold": 2,
+      "silver": 1,
+      "bronze": 1,
+      "total": 4
+    }
+  },
+  {
+    "name": "Finland",
+    "medals": {
+      "gold": 148,
+      "silver": 151,
+      "bronze": 185,
+      "total": 484
+    }
+  },
+  {
+    "name": "France",
+    "medals": {
+      "gold": 295,
+      "silver": 328,
+      "bronze": 368,
+      "total": 991
+    }
+  },
+  {
+    "name": "France / Great Britain",
+    "medals": {
+      "gold": 2,
+      "silver": 0,
+      "bronze": 1,
+      "total": 3
+    }
+  },
+  {
+    "name": "France / Great Britain / Ireland",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Gabon",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Georgia",
+    "medals": {
+      "gold": 13,
+      "silver": 15,
+      "bronze": 20,
+      "total": 48
+    }
+  },
+  {
+    "name": "German Democratic Republic",
+    "medals": {
+      "gold": 192,
+      "silver": 165,
+      "bronze": 162,
+      "total": 519
+    }
+  },
+  {
+    "name": "Germany",
+    "medals": {
+      "gold": 358,
+      "silver": 382,
+      "bronze": 368,
+      "total": 1108
+    }
+  },
+  {
+    "name": "Ghana",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 4,
+      "total": 5
+    }
+  },
+  {
+    "name": "Great Britain",
+    "medals": {
+      "gold": 317,
+      "silver": 353,
+      "bronze": 366,
+      "total": 1036
+    }
+  },
+  {
+    "name": "Great Britain / Australia",
+    "medals": {
+      "gold": 2,
+      "silver": 0,
+      "bronze": 1,
+      "total": 3
+    }
+  },
+  {
+    "name": "Great Britain / France / United States of America",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Great Britain / Ireland",
+    "medals": {
+      "gold": 2,
+      "silver": 1,
+      "bronze": 0,
+      "total": 3
+    }
+  },
+  {
+    "name": "Great Britain / Ireland / Germany",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Greece",
+    "medals": {
+      "gold": 44,
+      "silver": 59,
+      "bronze": 59,
+      "total": 162
+    }
+  },
+  {
+    "name": "Greece / Belgium",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Grenada",
+    "medals": {
+      "gold": 1,
+      "silver": 1,
+      "bronze": 3,
+      "total": 5
+    }
+  },
+  {
+    "name": "Guatemala",
+    "medals": {
+      "gold": 1,
+      "silver": 1,
+      "bronze": 1,
+      "total": 3
+    }
+  },
+  {
+    "name": "Guyana",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Haiti",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 1,
+      "total": 2
+    }
+  },
+  {
+    "name": "Hong Kong",
+    "medals": {
+      "gold": 4,
+      "silver": 3,
+      "bronze": 6,
+      "total": 13
+    }
+  },
+  {
+    "name": "Hungary",
+    "medals": {
+      "gold": 191,
+      "silver": 168,
+      "bronze": 191,
+      "total": 550
+    }
+  },
+  {
+    "name": "Iceland",
+    "medals": {
+      "gold": 0,
+      "silver": 2,
+      "bronze": 2,
+      "total": 4
+    }
+  },
+  {
+    "name": "Independent Olympic Participants",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 2,
+      "total": 3
+    }
+  },
+  {
+    "name": "India",
+    "medals": {
+      "gold": 10,
+      "silver": 10,
+      "bronze": 21,
+      "total": 41
+    }
+  },
+  {
+    "name": "Individual Neutral Athletes",
+    "medals": {
+      "gold": 1,
+      "silver": 3,
+      "bronze": 1,
+      "total": 5
+    }
+  },
+  {
+    "name": "Individual Olympic Athletes",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 1,
+      "total": 2
+    }
+  },
+  {
+    "name": "Indonesia",
+    "medals": {
+      "gold": 10,
+      "silver": 14,
+      "bronze": 16,
+      "total": 40
+    }
+  },
+  {
+    "name": "Iran",
+    "medals": {
+      "gold": 27,
+      "silver": 30,
+      "bronze": 32,
+      "total": 89
+    }
+  },
+  {
+    "name": "Iraq",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Ireland",
+    "medals": {
+      "gold": 15,
+      "silver": 10,
+      "bronze": 17,
+      "total": 42
+    }
+  },
+  {
+    "name": "Israel",
+    "medals": {
+      "gold": 4,
+      "silver": 6,
+      "bronze": 10,
+      "total": 20
+    }
+  },
+  {
+    "name": "Italy",
+    "medals": {
+      "gold": 277,
+      "silver": 250,
+      "bronze": 287,
+      "total": 814
+    }
+  },
+  {
+    "name": "Jamaica",
+    "medals": {
+      "gold": 27,
+      "silver": 39,
+      "bronze": 28,
+      "total": 94
+    }
+  },
+  {
+    "name": "Japan \r\n/ Korea",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 1,
+      "total": 2
+    }
+  },
+  {
+    "name": "Japan",
+    "medals": {
+      "gold": 205,
+      "silver": 190,
+      "bronze": 221,
+      "total": 616
+    }
+  },
+  {
+    "name": "Jordan",
+    "medals": {
+      "gold": 1,
+      "silver": 2,
+      "bronze": 1,
+      "total": 4
+    }
+  },
+  {
+    "name": "Kazakhstan",
+    "medals": {
+      "gold": 16,
+      "silver": 26,
+      "bronze": 42,
+      "total": 84
+    }
+  },
+  {
+    "name": "Kenya",
+    "medals": {
+      "gold": 39,
+      "silver": 44,
+      "bronze": 41,
+      "total": 124
+    }
+  },
+  {
+    "name": "Kosovo",
+    "medals": {
+      "gold": 3,
+      "silver": 1,
+      "bronze": 1,
+      "total": 5
+    }
+  },
+  {
+    "name": "Kuwait",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 3,
+      "total": 3
+    }
+  },
+  {
+    "name": "Kyrghyzstan",
+    "medals": {
+      "gold": 0,
+      "silver": 5,
+      "bronze": 8,
+      "total": 13
+    }
+  },
+  {
+    "name": "Latvia",
+    "medals": {
+      "gold": 5,
+      "silver": 14,
+      "bronze": 11,
+      "total": 30
+    }
+  },
+  {
+    "name": "Lebanon",
+    "medals": {
+      "gold": 0,
+      "silver": 2,
+      "bronze": 2,
+      "total": 4
+    }
+  },
+  {
+    "name": "Liechtenstein",
+    "medals": {
+      "gold": 2,
+      "silver": 2,
+      "bronze": 6,
+      "total": 10
+    }
+  },
+  {
+    "name": "Lithuania",
+    "medals": {
+      "gold": 6,
+      "silver": 8,
+      "bronze": 15,
+      "total": 29
+    }
+  },
+  {
+    "name": "Luxembourg",
+    "medals": {
+      "gold": 1,
+      "silver": 3,
+      "bronze": 0,
+      "total": 4
+    }
+  },
+  {
+    "name": "Luxembourgh / France",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Malaysia",
+    "medals": {
+      "gold": 0,
+      "silver": 8,
+      "bronze": 7,
+      "total": 15
+    }
+  },
+  {
+    "name": "Mauritius",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Mexico",
+    "medals": {
+      "gold": 13,
+      "silver": 27,
+      "bronze": 37,
+      "total": 77
+    }
+  },
+  {
+    "name": "Moldova",
+    "medals": {
+      "gold": 0,
+      "silver": 3,
+      "bronze": 7,
+      "total": 10
+    }
+  },
+  {
+    "name": "Mongolia",
+    "medals": {
+      "gold": 2,
+      "silver": 12,
+      "bronze": 17,
+      "total": 31
+    }
+  },
+  {
+    "name": "Montenegro",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Morocco",
+    "medals": {
+      "gold": 8,
+      "silver": 5,
+      "bronze": 13,
+      "total": 26
+    }
+  },
+  {
+    "name": "Mozambique",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 1,
+      "total": 2
+    }
+  },
+  {
+    "name": "Namibia",
+    "medals": {
+      "gold": 0,
+      "silver": 5,
+      "bronze": 0,
+      "total": 5
+    }
+  },
+  {
+    "name": "Netherlands",
+    "medals": {
+      "gold": 163,
+      "silver": 162,
+      "bronze": 181,
+      "total": 506
+    }
+  },
+  {
+    "name": "Netherlands / France",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Netherlands Antilles",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "New Zealand",
+    "medals": {
+      "gold": 65,
+      "silver": 42,
+      "bronze": 56,
+      "total": 163
+    }
+  },
+  {
+    "name": "Niger",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 1,
+      "total": 2
+    }
+  },
+  {
+    "name": "Nigeria",
+    "medals": {
+      "gold": 3,
+      "silver": 11,
+      "bronze": 13,
+      "total": 27
+    }
+  },
+  {
+    "name": "North Korea",
+    "medals": {
+      "gold": 16,
+      "silver": 19,
+      "bronze": 28,
+      "total": 63
+    }
+  },
+  {
+    "name": "North-Macedonia",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 1,
+      "total": 2
+    }
+  },
+  {
+    "name": "Norway",
+    "medals": {
+      "gold": 212,
+      "silver": 188,
+      "bronze": 176,
+      "total": 576
+    }
+  },
+  {
+    "name": "Pakistan",
+    "medals": {
+      "gold": 4,
+      "silver": 3,
+      "bronze": 4,
+      "total": 11
+    }
+  },
+  {
+    "name": "Panama",
+    "medals": {
+      "gold": 1,
+      "silver": 1,
+      "bronze": 2,
+      "total": 4
+    }
+  },
+  {
+    "name": "Paraguay",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Peru",
+    "medals": {
+      "gold": 1,
+      "silver": 3,
+      "bronze": 1,
+      "total": 5
+    }
+  },
+  {
+    "name": "Philippines",
+    "medals": {
+      "gold": 3,
+      "silver": 5,
+      "bronze": 10,
+      "total": 18
+    }
+  },
+  {
+    "name": "Poland",
+    "medals": {
+      "gold": 80,
+      "silver": 99,
+      "bronze": 151,
+      "total": 330
+    }
+  },
+  {
+    "name": "Portugal",
+    "medals": {
+      "gold": 6,
+      "silver": 11,
+      "bronze": 15,
+      "total": 32
+    }
+  },
+  {
+    "name": "Puerto Rico",
+    "medals": {
+      "gold": 2,
+      "silver": 2,
+      "bronze": 8,
+      "total": 12
+    }
+  },
+  {
+    "name": "Qatar",
+    "medals": {
+      "gold": 2,
+      "silver": 2,
+      "bronze": 5,
+      "total": 9
+    }
+  },
+  {
+    "name": "Refugee Olympic Team",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Romania",
+    "medals": {
+      "gold": 93,
+      "silver": 101,
+      "bronze": 125,
+      "total": 319
+    }
+  },
+  {
+    "name": "Russia",
+    "medals": {
+      "gold": 194,
+      "silver": 170,
+      "bronze": 189,
+      "total": 553
+    }
+  },
+  {
+    "name": "Russian Olympic Commitee",
+    "medals": {
+      "gold": 27,
+      "silver": 46,
+      "bronze": 47,
+      "total": 120
+    }
+  },
+  {
+    "name": "Saint Lucia",
+    "medals": {
+      "gold": 1,
+      "silver": 1,
+      "bronze": 0,
+      "total": 2
+    }
+  },
+  {
+    "name": "Samoa",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "San Marino",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 2,
+      "total": 3
+    }
+  },
+  {
+    "name": "Saudi Arabia",
+    "medals": {
+      "gold": 0,
+      "silver": 2,
+      "bronze": 2,
+      "total": 4
+    }
+  },
+  {
+    "name": "Senegal",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Serbia",
+    "medals": {
+      "gold": 9,
+      "silver": 8,
+      "bronze": 12,
+      "total": 29
+    }
+  },
+  {
+    "name": "Serbia Montenegro",
+    "medals": {
+      "gold": 0,
+      "silver": 2,
+      "bronze": 0,
+      "total": 2
+    }
+  },
+  {
+    "name": "Singapore",
+    "medals": {
+      "gold": 1,
+      "silver": 2,
+      "bronze": 3,
+      "total": 6
+    }
+  },
+  {
+    "name": "Slovakia",
+    "medals": {
+      "gold": 14,
+      "silver": 18,
+      "bronze": 11,
+      "total": 43
+    }
+  },
+  {
+    "name": "Slovenia",
+    "medals": {
+      "gold": 14,
+      "silver": 18,
+      "bronze": 23,
+      "total": 55
+    }
+  },
+  {
+    "name": "Smyrna",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "South Africa",
+    "medals": {
+      "gold": 28,
+      "silver": 36,
+      "bronze": 31,
+      "total": 95
+    }
+  },
+  {
+    "name": "South Korea",
+    "medals": {
+      "gold": 142,
+      "silver": 130,
+      "bronze": 127,
+      "total": 399
+    }
+  },
+  {
+    "name": "Soviet Union",
+    "medals": {
+      "gold": 473,
+      "silver": 376,
+      "bronze": 355,
+      "total": 1204
+    }
+  },
+  {
+    "name": "Spain",
+    "medals": {
+      "gold": 54,
+      "silver": 77,
+      "bronze": 60,
+      "total": 191
+    }
+  },
+  {
+    "name": "Sri Lanka",
+    "medals": {
+      "gold": 0,
+      "silver": 2,
+      "bronze": 0,
+      "total": 2
+    }
+  },
+  {
+    "name": "Sudan",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Suriname",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 1,
+      "total": 2
+    }
+  },
+  {
+    "name": "Sweden",
+    "medals": {
+      "gold": 218,
+      "silver": 237,
+      "bronze": 249,
+      "total": 704
+    }
+  },
+  {
+    "name": "Sweden / Denmark",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Switzerland",
+    "medals": {
+      "gold": 123,
+      "silver": 131,
+      "bronze": 137,
+      "total": 391
+    }
+  },
+  {
+    "name": "Syria",
+    "medals": {
+      "gold": 1,
+      "silver": 1,
+      "bronze": 2,
+      "total": 4
+    }
+  },
+  {
+    "name": "Tajikistan",
+    "medals": {
+      "gold": 1,
+      "silver": 1,
+      "bronze": 5,
+      "total": 7
+    }
+  },
+  {
+    "name": "Tanzania",
+    "medals": {
+      "gold": 0,
+      "silver": 2,
+      "bronze": 0,
+      "total": 2
+    }
+  },
+  {
+    "name": "Thailand",
+    "medals": {
+      "gold": 11,
+      "silver": 11,
+      "bronze": 19,
+      "total": 41
+    }
+  },
+  {
+    "name": "Thessalonika",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Togo",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Tonga",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Trinidad & Tobago",
+    "medals": {
+      "gold": 2,
+      "silver": 6,
+      "bronze": 11,
+      "total": 19
+    }
+  },
+  {
+    "name": "Tunisia",
+    "medals": {
+      "gold": 5,
+      "silver": 4,
+      "bronze": 8,
+      "total": 17
+    }
+  },
+  {
+    "name": "Turkey",
+    "medals": {
+      "gold": 42,
+      "silver": 29,
+      "bronze": 41,
+      "total": 112
+    }
+  },
+  {
+    "name": "Turkmenistan",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "Uganda",
+    "medals": {
+      "gold": 5,
+      "silver": 5,
+      "bronze": 3,
+      "total": 13
+    }
+  },
+  {
+    "name": "Ukraine",
+    "medals": {
+      "gold": 41,
+      "silver": 43,
+      "bronze": 76,
+      "total": 160
+    }
+  },
+  {
+    "name": "United Arab Emirates",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 1,
+      "total": 2
+    }
+  },
+  {
+    "name": "United States of America",
+    "medals": {
+      "gold": 1228,
+      "silver": 1004,
+      "bronze": 882,
+      "total": 3114
+    }
+  },
+  {
+    "name": "United States of America / Cuba",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "United States of America / France",
+    "medals": {
+      "gold": 0,
+      "silver": 3,
+      "bronze": 0,
+      "total": 3
+    }
+  },
+  {
+    "name": "United States of America / Germany",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "United States of America / Great Britain",
+    "medals": {
+      "gold": 1,
+      "silver": 0,
+      "bronze": 1,
+      "total": 2
+    }
+  },
+  {
+    "name": "United States of America / Mexico",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  },
+  {
+    "name": "Uruguay",
+    "medals": {
+      "gold": 2,
+      "silver": 2,
+      "bronze": 6,
+      "total": 10
+    }
+  },
+  {
+    "name": "Uzbekistan",
+    "medals": {
+      "gold": 19,
+      "silver": 8,
+      "bronze": 23,
+      "total": 50
+    }
+  },
+  {
+    "name": "Venezuela",
+    "medals": {
+      "gold": 3,
+      "silver": 7,
+      "bronze": 9,
+      "total": 19
+    }
+  },
+  {
+    "name": "Vietnam",
+    "medals": {
+      "gold": 1,
+      "silver": 3,
+      "bronze": 1,
+      "total": 5
+    }
+  },
+  {
+    "name": "Virgin Islands",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    }
+  },
+  {
+    "name": "West Indies Federation",
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 2,
+      "total": 2
+    }
+  },
+  {
+    "name": "Yugoslavia",
+    "medals": {
+      "gold": 28,
+      "silver": 34,
+      "bronze": 32,
+      "total": 94
+    }
+  },
+  {
+    "name": "Zambia",
+    "medals": {
+      "gold": 0,
+      "silver": 1,
+      "bronze": 2,
+      "total": 3
+    }
+  },
+  {
+    "name": "Zimbabwe",
+    "medals": {
+      "gold": 3,
+      "silver": 4,
+      "bronze": 1,
+      "total": 8
+    }
+  }
+]
